@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "0d634fc0-ebe5-43e4-af25-1050e5dbc7e6",
+		"name": "tfm-backend-calls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20256638"
+	},
+	"item": [
+		{
+			"name": "delete_car",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar que la respuesta es correcta\",function(){\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"pm.test(\"Content-Type header is application/json\", () => {\r",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZmRmM2RkMzdiYjI4NGJlMjI4ZTAwMiIsImlhdCI6MTY5NDM2NTgzN30.UIKsX4ORnAZxOCisLm-VO_DQpuS_lO4Cv7EpupyMkd0",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZmRmM2RkMzdiYjI4NGJlMjI4ZTAwMiIsImlhdCI6MTY5NDM2NTgzN30.UIKsX4ORnAZxOCisLm-VO_DQpuS_lO4Cv7EpupyMkd0",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:4001/api/list_cars/delete/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"list_cars",
+						"delete",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new_car",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar que la respuesta es correcta\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type header is application/json\", () => {\r",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "marca",
+							"value": "dfasasd",
+							"type": "text"
+						},
+						{
+							"key": "modelo",
+							"value": "dasd",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "maletero",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "km",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "potencia",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "cilindrada",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "consumourbano",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "consumoextraurbano",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "traccion",
+							"value": "hola",
+							"type": "text"
+						},
+						{
+							"key": "imagen",
+							"type": "file",
+							"src": "OgVetlOwC/Captura de pantalla (2).png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4001/api/newcar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"newcar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register_user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar que la respuesta es correcta\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type header is application/json\", () => {\r",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"nombre\": \"useombre\",\r\n          \"apellido\": \"useraplido\",\r\n          \"email\": \"useremail@hotmail.com\",\r\n          \"contrasena\": \"userpsword\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/api/login/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"login",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar que la respuesta es correcta\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type header is application/json\", () => {\r",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "prueba@hotmail.com",
+							"type": "text"
+						},
+						{
+							"key": "contrasena",
+							"value": "prueba",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4001/api/login/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"login",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list_cars",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar que la respuesta es correcta\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type header is application/json\", () => {\r",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4001/api/list_cars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"list_cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getimagen",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4001/api/list_cars/imagen/6662279401053e25f6567ff2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"list_cars",
+						"imagen",
+						"6662279401053e25f6567ff2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
