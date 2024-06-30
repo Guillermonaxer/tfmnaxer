@@ -1,0 +1,51 @@
+<!-- Table for sorting options -->
+<div class="table-container">
+  <table class="table">
+    <tr>
+      <td>Precio</td>
+      <td>Maletero</td>
+      <td>Km</td>
+      <td>Potencia</td>
+    </tr>
+    <tr>
+      <td><button class="btn-delete" (click)="precioasc()">Asc</button></td>
+      <td><button class="btn-delete" (click)="maleteroasc()">Asc</button></td>
+      <td><button class="btn-delete" (click)="kmasc()">Asc</button></td>
+      <td><button class="btn-delete" (click)="potenciaasc()">Asc</button></td>
+    </tr>
+    <tr>
+      <td><button class="btn-delete" (click)="precio()">Desc</button></td>
+      <td><button class="btn-delete" (click)="maletero()">Desc</button></td>
+      <td><button class="btn-delete" (click)="km()">Desc</button></td>
+      <td><button class="btn-delete" (click)="potencia()">Desc</button></td>
+    </tr>
+  </table>
+</div>
+
+<div *ngIf="paginatedCars.length > 0">
+  <div class="card-container">
+    <div class="card" *ngFor="let car of paginatedCars">
+      <img [src]="getImageUrl(car)" alt="Car Image" class="car-image" loading="lazy">
+      <div class="card-content">
+        <h3>{{ car.marca }} {{ car.modelo }}</h3>
+        <p>Precio: {{ car.precio }}</p>
+        <p>Maletero: {{ car.maletero }}</p>
+        <p>Km: {{ car.km }}</p>
+        <p>Potencia: {{ car.potencia }}</p>
+        <p>Cilindrada: {{ car.cilindrada }}</p>
+        <p>Consumo Urbano: {{ car.consumourbano }}</p>
+        <p>Consumo Extraurbano: {{ car.consumoextraurbano }}</p>
+        <p>Tracción: {{ car.traccion }}</p>
+        <input type="checkbox" (change)="toggleCompare(car)"> Comparar
+        <button class="btn-delete" (click)="deleteCar(car._id)">Eliminar</button> <!-- Botón para eliminar -->
+      </div>
+    </div>
+  </div>
+  <div class="pagination">
+    <button (click)="onPageChange(page - 1)" [disabled]="page <= 1">Anterior</button>
+    <span style="color:white">Página {{ page }} de {{ getTotalPages() }}</span>
+    <button (click)="onPageChange(page + 1)" [disabled]="page >= getTotalPages()">Siguiente</button>
+  </div>
+  <p class="total">Total de registros: {{ totalCars }}</p>
+  <button class="compare-button" (click)="navigateToCompare()" [disabled]="selectedCars.length !== 2">Comparar Seleccionados</button>
+</div>

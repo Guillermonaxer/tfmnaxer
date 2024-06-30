@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comparador de Coches</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    /* Estilos personalizados */
+    .navbar-brand {
+      color: blue;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+    .dropdown-menu {
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .dropdown-item:hover {
+      background-color: #f8f9fa;
+    }
+    .nav-link {
+      color: black !important;
+    }
+    .nav-link:hover {
+      color: gray !important;
+    }
+    /* Estilo para mejor posicionamiento del menú desplegable */
+    .navbar-nav.ml-auto .dropdown-menu {
+      right: 0;
+      left: auto;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#" style="color:blue">COMPARADOR DE COCHES</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/inicio']">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/listadocoches']">Coches</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+      
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/register']">Registro</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto" *ngIf="username !== 'Usuario'">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            MENU
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/listadocoches']">Listado coches</a>
+            <a class="dropdown-item" [routerLink]="['/crearcoche']">Crear coche</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="['/login']">Cerrar sesion</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Contenido -->
+  <router-outlet></router-outlet>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

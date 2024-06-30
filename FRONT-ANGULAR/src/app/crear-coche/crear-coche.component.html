@@ -1,0 +1,50 @@
+<div class="form-container">
+  <h2>Dar de alta un coche</h2>
+  <form [formGroup]="uploadForm" (ngSubmit)="onUpload()">
+    <div class="form-group">
+      <label for="marca">Marca:</label>
+      <input id="marca" formControlName="marca" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="modelo">Modelo:</label>
+      <input id="modelo" formControlName="modelo" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="precio">Precio:</label>
+      <input id="precio" formControlName="precio" type="number" />
+    </div>
+    <div class="form-group">
+      <label for="maletero">Maletero:</label>
+      <input id="maletero" formControlName="maletero" type="number" />
+    </div>
+    <div class="form-group">
+      <label for="km">Km:</label>
+      <input id="km" formControlName="km" type="number" />
+    </div>
+    <div class="form-group">
+      <label for="potencia">Potencia:</label>
+      <input id="potencia" formControlName="potencia" type="number" />
+    </div>
+    <div class="form-group">
+      <label for="cilindrada">Cilindrada:</label>
+      <input id="cilindrada" formControlName="cilindrada" type="number" />
+    </div>
+    <div class="form-group">
+      <label for="consumourbano">Consumo urbano:</label>
+      <input id="consumourbano" formControlName="consumourbano" type="number" step="0.01" />
+    </div>
+    <div class="form-group">
+      <label for="consumoextraurbano">Consumo extra urbano:</label>
+      <input id="consumoextraurbano" formControlName="consumoextraurbano" type="number" step="0.01" />
+    </div>
+    <div class="form-group">
+      <label for="traccion">Tracción:</label>
+      <input id="traccion" formControlName="traccion" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="imagen">Imagen:</label>
+      <input id="imagen" type="file" (change)="onFileSelected($event)" />
+    </div>
+    <button type="submit" class="submit-button">Crear</button>
+  </form>
+</div>

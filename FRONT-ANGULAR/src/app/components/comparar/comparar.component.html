@@ -1,0 +1,19 @@
+<div *ngIf="cars.length === 2">
+    <div class="compare-container">
+      <div class="card" *ngFor="let car of cars">
+        <img [src]="getImageUrl(car)" alt="Car Image" class="compare-image">
+        <div class="card-content">
+          <h3>{{ car.marca }} {{ car.modelo }}</h3>
+          <p>Precio: {{ car.precio }}</p>
+          <p>Maletero: {{ car.maletero }}</p>
+          <p>Km: {{ car.km }}</p>
+          <p>Potencia: {{ car.potencia }}</p>
+          <p>Cilindrada: {{ car.cilindrada }}</p>
+          <p>Consumo Urbano: {{ car.consumourbano }}</p>
+          <p>Consumo Extraurbano: {{ car.consumoextraurbano }}</p>
+          <p>Tracción: {{ car.traccion }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,38 @@
+ body {
+  
+    background-image: url('/assets/pictures/background.jpg'); /* Reemplaza con la ruta de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fija la imagen de fondo */
+    margin: 0; /* Asegúrate de que no haya margen alrededor del body */
+    min-height: 100vh;
+    }
+    .container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        background-image: url('/assets/pictures/background.jpg'); /* Reemplaza con la ruta de tu imagen de fondo */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Fija la imagen de fondo */
+        margin: 0; /* Asegúrate de que no haya margen alrededor del body */
+        min-height: 100vh;
+      }
+
+    nav{
+       
+            min-width: 100%;
+            width: 100%; /*Solo para IE6*/
+            
+    }
+    p{
+        color:white
+    }
+    label{
+        color:white
+    }
+    
+    
